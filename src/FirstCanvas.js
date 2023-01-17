@@ -1,18 +1,9 @@
 import React, { Suspense } from 'react';
-import {Canvas, useLoader} from "@react-three/fiber"
+import {Canvas} from "@react-three/fiber"
 import { OrbitControls } from '@react-three/drei';
-import { TextureLoader } from 'three';
-import texture1 from './TexturesCom_Ground_ForestClovers02_header.jpg';
-import texture2 from './pexels-matheus-bertelli-4558481.jpg';
-import {Model} from "./BlenderDraco"
+import {Model} from "./BlenderDraco";
 
 export default function FirstCanvas() {
-/*     useEffect(() => {
-
-
-    }, []) */
-
-    const colorMap = useLoader(TextureLoader, texture1);
 
     return <div className='cento'>
         <Suspense fallback={null}>

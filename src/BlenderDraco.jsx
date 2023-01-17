@@ -71,6 +71,10 @@ export function Model(props) {
         scale={0.3}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("Addominali")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.addome.geometry}
@@ -78,12 +82,15 @@ export function Model(props) {
         />
       </group>
       <group
+        onClick={(e) => {
+          e.stopPropagation()
+          console.log("bicipiti")}
+        }
         position={[0, 3.03, 0.08]}
         rotation={[-1.55, 0, -Math.PI]}
         scale={0.26}
       >
         <mesh
-        onClick={() => console.log("bicipiti")}
           castShadow
           receiveShadow
           geometry={nodes.bicipiti.geometry}
@@ -96,15 +103,23 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("Avambracci")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.avambracci.geometry}
           material={materials["material 7"]}
         />
       </group>
-      <group rotation={[-Math.PI / 2, 0, -Math.PI]} scale={0.26}>
+      <group rotation={[-Math.PI / 2, 0, -Math.PI]} scale={0.26}
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("bicipiti femorali")}
+                }
+      >
         <mesh
-        onClick={() => console.log("bicipiti femorali")}
           castShadow
           receiveShadow
           geometry={nodes["bicipiti-femorali"].geometry}
@@ -117,6 +132,10 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("polpacci")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.polpacci2.geometry}
@@ -129,6 +148,10 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("spalle")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.spalle3.geometry}
@@ -141,6 +164,10 @@ export function Model(props) {
         scale={0.13}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("trapezio")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.trapezio.geometry}
@@ -153,6 +180,10 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("dorsali")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.dorsali.geometry}
@@ -165,6 +196,10 @@ export function Model(props) {
         scale={0.11}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("dorsali")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.scapole2.geometry}
@@ -177,6 +212,10 @@ export function Model(props) {
         scale={0.11}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("pettorali")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.pettorali.geometry}
@@ -225,6 +264,10 @@ export function Model(props) {
         scale={0.19}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("addominali")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.addominali2.geometry}
@@ -237,6 +280,10 @@ export function Model(props) {
         scale={0.09}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("lombari")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.lombari.geometry}
@@ -249,6 +296,10 @@ export function Model(props) {
         scale={0.11}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("dorsali")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.scapole.geometry}
@@ -261,6 +312,10 @@ export function Model(props) {
         scale={[0.43, 0.43, 0.3]}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("glutei")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.glutei.geometry}
@@ -273,6 +328,10 @@ export function Model(props) {
         scale={0.13}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("fianchi")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.fianchi.geometry}
@@ -321,6 +380,10 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("spalle")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.spalle2.geometry}
@@ -333,6 +396,10 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("spalle")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.spalle1.geometry}
@@ -381,6 +448,10 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("quadricipiti")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.quadricipitiprinc.geometry}
@@ -489,6 +560,10 @@ export function Model(props) {
         scale={0.3}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("addominali")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.addominali.geometry}
@@ -521,6 +596,10 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
+                onClick={(e) => {
+                  e.stopPropagation()
+                  console.log("polpacci")}
+                }
           castShadow
           receiveShadow
           geometry={nodes.polpacci.geometry}
@@ -552,12 +631,15 @@ export function Model(props) {
         />
       </group>
       <group
+        onClick={(e) => {
+          e.stopPropagation()
+          console.log("tricipiti")}
+        }
         position={[0, 3.03, 0.1]}
         rotation={[-1.55, 0, -Math.PI]}
         scale={0.26}
       >
         <mesh
-        onClick={() => console.log("tricipiti")}
           castShadow
           receiveShadow
           geometry={nodes.tricipiti.geometry}
