@@ -9,12 +9,11 @@ export default function FirstCanvas() {
 const plane = new THREE.MeshPhysicalMaterial();
 
 plane.color = {
-    r: 1,
+    r: 0,
     g: 0,
-    b: 0,
+    b: 1.38,
 }
-plane.metalness = 1
-plane.opacity = 0
+plane.metalness = 1.5
 console.log(plane)
     return <div className='cento'>
         <Suspense fallback={null}>

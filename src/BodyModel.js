@@ -16,7 +16,7 @@ export function BodyModel(props) {
         }
       }
     }
-    e.object.material.color = {r:2, g: 0 ,b: 0, isColor: true}
+    e.object.material.color = {r:1, g: 0 ,b: 0, isColor: true}
   }
 
   return (
