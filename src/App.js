@@ -1,4 +1,4 @@
-import FirstCanvas from './FirstCanvas';
+import FirstCanvas from './BodyModelCanvas';
 
 function App() {
   return (
