@@ -3,18 +3,34 @@ import { useGLTF } from "@react-three/drei";
 
 export function Model(props) {
   const { nodes, materials } = useGLTF("/Neo.glb");
+
+  function changeColor(e) {
+    for (let i = 0; i <= 48; i++) {
+      if (materials[`material ${i}`]) {
+        materials[`material ${i}`].color = {
+          b: 0.8670237934377415,
+          g: 0.8670237934377415,
+          isColor: true,
+          r: 0.8670237934377415
+        }
+      }
+    }
+    e.object.material.color = {r:2, g: 0 ,b: 0, isColor: true}
+  }
+
   return (
     <group {...props} dispose={null}>
       <group
         position={[0, 4.24, 0.07]}
         rotation={[-1.52, 0, -Math.PI]}
         scale={0.24}
+        castShadow
       >
         <mesh
           castShadow
           receiveShadow
           geometry={nodes.group_ME_Cube_002.geometry}
-          material={materials.material}
+          material={materials["material 0"]}
         />
       </group>
       <group
@@ -49,7 +65,7 @@ export function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.group_ME_Cube_006.geometry}
+          geometry={nodes["addominali-obliqui"].geometry}
           material={materials["material 3"]}
         />
       </group>
@@ -71,10 +87,6 @@ export function Model(props) {
         scale={0.3}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("Addominali")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.addome.geometry}
@@ -82,15 +94,12 @@ export function Model(props) {
         />
       </group>
       <group
-        onClick={(e) => {
-          e.stopPropagation()
-          console.log("bicipiti")}
-        }
         position={[0, 3.03, 0.08]}
         rotation={[-1.55, 0, -Math.PI]}
         scale={0.26}
       >
         <mesh
+        onClick={changeColor}
           castShadow
           receiveShadow
           geometry={nodes.bicipiti.geometry}
@@ -103,22 +112,13 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("Avambracci")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.avambracci.geometry}
           material={materials["material 7"]}
         />
       </group>
-      <group rotation={[-Math.PI / 2, 0, -Math.PI]} scale={0.26}
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("bicipiti femorali")}
-                }
-      >
+      <group rotation={[-Math.PI / 2, 0, -Math.PI]} scale={0.26}>
         <mesh
           castShadow
           receiveShadow
@@ -132,10 +132,6 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("polpacci")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.polpacci2.geometry}
@@ -148,10 +144,6 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("spalle")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.spalle3.geometry}
@@ -164,10 +156,6 @@ export function Model(props) {
         scale={0.13}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("trapezio")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.trapezio.geometry}
@@ -180,10 +168,6 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("dorsali")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.dorsali.geometry}
@@ -196,10 +180,6 @@ export function Model(props) {
         scale={0.11}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("dorsali")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.scapole2.geometry}
@@ -212,10 +192,7 @@ export function Model(props) {
         scale={0.11}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("pettorali")}
-                }
+        onClick={changeColor}
           castShadow
           receiveShadow
           geometry={nodes.pettorali.geometry}
@@ -232,18 +209,6 @@ export function Model(props) {
           receiveShadow
           geometry={nodes.collo.geometry}
           material={materials["material 15"]}
-        />
-      </group>
-      <group
-        position={[0, 4.66, 0.1]}
-        rotation={[-1.52, 0, -Math.PI]}
-        scale={0.26}
-      >
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.group_ME_Cube_007_001.geometry}
-          material={materials["material 16"]}
         />
       </group>
       <group
@@ -264,10 +229,6 @@ export function Model(props) {
         scale={0.19}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("addominali")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.addominali2.geometry}
@@ -280,10 +241,6 @@ export function Model(props) {
         scale={0.09}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("lombari")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.lombari.geometry}
@@ -296,10 +253,6 @@ export function Model(props) {
         scale={0.11}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("dorsali")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.scapole.geometry}
@@ -312,10 +265,6 @@ export function Model(props) {
         scale={[0.43, 0.43, 0.3]}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("glutei")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.glutei.geometry}
@@ -328,26 +277,10 @@ export function Model(props) {
         scale={0.13}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("fianchi")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.fianchi.geometry}
           material={materials["material 22"]}
-        />
-      </group>
-      <group
-        position={[0, 2.39, -0.03]}
-        rotation={[-Math.PI / 2, 0, -Math.PI]}
-        scale={0.13}
-      >
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.group_ME_Cube_028.geometry}
-          material={materials["material 23"]}
         />
       </group>
       <group
@@ -380,10 +313,6 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("spalle")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.spalle2.geometry}
@@ -396,10 +325,6 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("spalle")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.spalle1.geometry}
@@ -448,26 +373,10 @@ export function Model(props) {
         scale={0.26}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("quadricipiti")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.quadricipitiprinc.geometry}
           material={materials["material 31"]}
-        />
-      </group>
-      <group
-        position={[0, 0.67, 0.08]}
-        rotation={[-Math.PI / 2, 0, -Math.PI]}
-        scale={0.26}
-      >
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.group_ME_Cube_021.geometry}
-          material={materials["material 32"]}
         />
       </group>
       <group
@@ -480,18 +389,6 @@ export function Model(props) {
           receiveShadow
           geometry={nodes.group_ME_Cube_022.geometry}
           material={materials["material 33"]}
-        />
-      </group>
-      <group
-        position={[0, 1.63, 0]}
-        rotation={[-Math.PI / 2, 0, -Math.PI]}
-        scale={0.26}
-      >
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.group_ME_Cube_023.geometry}
-          material={materials["material 34"]}
         />
       </group>
       <group
@@ -519,18 +416,6 @@ export function Model(props) {
         />
       </group>
       <group
-        position={[0, 2.52, -0.01]}
-        rotation={[-1.55, 0, -Math.PI]}
-        scale={0.26}
-      >
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.group_ME_Cube_026_001.geometry}
-          material={materials["material 37"]}
-        />
-      </group>
-      <group
         position={[0, 3.03, 0.1]}
         rotation={[-1.55, 0, -Math.PI]}
         scale={0.26}
@@ -538,7 +423,7 @@ export function Model(props) {
         <mesh
           castShadow
           receiveShadow
-          geometry={nodes.group_ME_Cube_027.geometry}
+          geometry={nodes["tricipite-2"].geometry}
           material={materials["material 38"]}
         />
       </group>
@@ -560,22 +445,10 @@ export function Model(props) {
         scale={0.3}
       >
         <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("addominali")}
-                }
           castShadow
           receiveShadow
           geometry={nodes.addominali.geometry}
           material={materials["material 40"]}
-        />
-      </group>
-      <group rotation={[-Math.PI / 2, 0, -Math.PI]} scale={0.26}>
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.quadricipiti.geometry}
-          material={materials["material 41"]}
         />
       </group>
       <group
@@ -591,22 +464,6 @@ export function Model(props) {
         />
       </group>
       <group
-        position={[0, 0.67, 0.07]}
-        rotation={[-Math.PI / 2, 0, -Math.PI]}
-        scale={0.26}
-      >
-        <mesh
-                onClick={(e) => {
-                  e.stopPropagation()
-                  console.log("polpacci")}
-                }
-          castShadow
-          receiveShadow
-          geometry={nodes.polpacci.geometry}
-          material={materials["material 43"]}
-        />
-      </group>
-      <group
         position={[0, 4.36, 0.08]}
         rotation={[-Math.PI / 2, 0, -Math.PI]}
         scale={0.14}
@@ -619,22 +476,6 @@ export function Model(props) {
         />
       </group>
       <group
-        position={[0, 4.01, 0.14]}
-        rotation={[-1.52, 0, -Math.PI]}
-        scale={0.13}
-      >
-        <mesh
-          castShadow
-          receiveShadow
-          geometry={nodes.group_ME_Cube_060.geometry}
-          material={materials["material 45"]}
-        />
-      </group>
-      <group
-        onClick={(e) => {
-          e.stopPropagation()
-          console.log("tricipiti")}
-        }
         position={[0, 3.03, 0.1]}
         rotation={[-1.55, 0, -Math.PI]}
         scale={0.26}
